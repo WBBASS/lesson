@@ -1,0 +1,265 @@
+<title>Play The Bass 레슨 5안</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+@font-face { font-family: 'Paperlogy'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+.pm, .pm * { font-family: 'Paperlogy', "Apple SD Gothic Neo", "Malgun Gothic", sans-serif !important; }
+
+/* Layout: 차분한 프리미엄 톤. 큰 사진 + 가는 선 + 넉넉한 여백. 이유 카드는 옆으로 넘기는 스와이프. 폰 기준 4~5화면이면 끝나는 짧은 흐름. */
+.pm {
+  --brand: #0f4c5c;
+  --brand-deep: #0a3540;
+  --tint: #f1f6f7;
+  --ink: #102227;
+  --ink-2: #5d7177;
+  --line: #d9e4e6;
+  --paper: #ffffff;
+  --gold: #c9a45c;          /* 절제된 포인트 (브라스 노브 느낌) */
+  --kakao: #fee500;
+  color-scheme: light;
+  background: var(--paper); color: var(--ink);
+  font-size: 16px; line-height: 1.75; word-break: keep-all; -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+body { background: #ffffff; }
+.pm *, .pm *::before, .pm *::after { box-sizing: border-box; }
+.pm h1, .pm h2, .pm h3, .pm p, .pm ul, .pm ol { margin: 0; padding: 0; }
+.pm ul, .pm ol { list-style: none; }
+.pm a { color: inherit; text-decoration: none; }
+.pm a:focus-visible, .pm button:focus-visible, .pm summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.pm-wrap { max-width: 640px; margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.pm-sec { padding-block: 80px; }
+.pm-k { font-size: 12px; font-weight: 600; letter-spacing: .22em; color: var(--gold); }
+.pm-h2 { font-size: 30px; font-weight: 300; line-height: 1.4; letter-spacing: -.02em; margin-top: 16px; text-wrap: balance; }
+.pm-h2 b { font-weight: 800; }
+
+/* ── 히어로: 사진 위 문장 ── */
+.pm-hero { position: relative; min-height: 600px; display: flex; align-items: flex-end; color: #ffffff; background: var(--brand-deep); overflow: hidden; }
+/* 연주 사진을 쓰려면 아래 .pm-photo 안에 <img src="…" alt="…"> 를 넣어 주세요 */
+.pm-photo { position: absolute; inset: 0; background:
+  radial-gradient(120% 80% at 80% 10%, rgba(201,164,92,.22), transparent 60%),
+  linear-gradient(180deg, var(--brand) 0%, var(--brand-deep) 100%); }
+.pm-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pm-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(6,26,32,.85) 100%); }
+.pm-strings { position: absolute; top: 0; bottom: 0; right: 14%; width: 74px; display: flex; justify-content: space-between; opacity: .28; }
+.pm-strings i { width: 1px; background: #ffffff; }
+.pm-strings i:nth-child(2) { width: 1.5px; } .pm-strings i:nth-child(3) { width: 2px; } .pm-strings i:nth-child(4) { width: 2.5px; }
+.pm-hero .pm-wrap { position: relative; z-index: 1; width: 100%; padding-block: 0 56px; }
+.pm-hero .pm-k { color: var(--gold); }
+.pm-hero h1 { font-size: clamp(38px, 10.5vw, 64px); font-weight: 300; line-height: 1.2; letter-spacing: -.03em; margin-top: 18px; }
+.pm-hero h1 b { font-weight: 800; }
+.pm-hero p { margin-top: 18px; font-size: 16px; color: rgba(255,255,255,.8); max-width: 24em; }
+.pm-hero-meta { display: flex; flex-wrap: wrap; gap: 0; margin-top: 28px; border-top: 1px solid rgba(255,255,255,.25); }
+.pm-hero-meta li { flex: 1 1 33%; padding: 14px 0 0; font-size: 13px; color: rgba(255,255,255,.7); }
+.pm-hero-meta li b { display: block; font-size: 16px; font-weight: 600; color: #ffffff; }
+
+/* ── 환영 문장 ── */
+.pm-welcome p.pm-body { margin-top: 20px; color: var(--ink-2); }
+.pm-sign { display: flex; align-items: center; gap: 12px; margin-top: 28px; font-size: 14px; color: var(--ink-2); }
+.pm-sign::before { content: ""; width: 32px; height: 1px; background: var(--gold); }
+
+/* ── 이유: 스와이프 카드 ── */
+.pm-swipe { display: grid; gap: 12px; margin-top: 32px; }
+.pm-swipe::-webkit-scrollbar { display: none; }
+.pm-card { scroll-snap-align: start; border: 1px solid var(--line); padding: 28px 24px; display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: baseline; background: var(--paper); }
+.pm-card:nth-child(1) { background: var(--brand); color: #ffffff; border-color: var(--brand); }
+.pm-card:nth-child(1) p { color: rgba(255,255,255,.75) !important; }
+.pm-card span { font-size: 12px; font-weight: 600; letter-spacing: .18em; color: var(--gold); }
+.pm-card h3 { font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1.35; }
+.pm-card p { font-size: 14px; color: var(--ink-2); margin-top: 8px; }
+.pm-swipe-hint { font-size: 12px; color: var(--ink-2); letter-spacing: .04em; }
+
+/* ── 커리큘럼 한 줄 ── */
+.pm-curr { background: var(--tint); }
+.pm-line { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 32px; border-top: 1px solid var(--ink); }
+.pm-line div { padding: 18px 12px 0 0; }
+.pm-line div + div { padding-left: 14px; border-left: 1px solid var(--line); }
+.pm-line b { display: block; font-size: 40px; font-weight: 300; line-height: 1.1; color: var(--brand); font-variant-numeric: tabular-nums; }
+.pm-line span { font-size: 13px; color: var(--ink-2); }
+.pm-curr p.pm-body { margin-top: 26px; color: var(--ink-2); font-size: 15px; }
+.pm-watch { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-weight: 600; }
+.pm-watch i { font-style: normal; font-size: 13px; color: var(--brand); letter-spacing: .1em; }
+
+/* ── 레슨비 · 시간 ── */
+.pm-price { display: flex; align-items: baseline; gap: 10px; margin-top: 30px; }
+.pm-price b { font-size: 48px; font-weight: 300; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.pm-price span { color: var(--ink-2); font-size: 15px; }
+.pm-terms { margin-top: 18px; border-top: 1px solid var(--ink); }
+.pm-terms li { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.pm-terms li b { font-weight: 400; color: var(--ink-2); font-size: 14px; }
+.pm-slots-h { display: flex; justify-content: space-between; align-items: baseline; margin-top: 44px; }
+.pm-slots-h b { font-size: 18px; font-weight: 800; }
+.pm-slots-h span { font-size: 12px; color: var(--ink-2); }
+.pm-slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; margin-top: 14px; }
+.pm-slot { border: 1px solid var(--brand); background: var(--paper); color: var(--brand); padding: 14px 4px; font-size: 17px; font-weight: 600; cursor: pointer; font-variant-numeric: tabular-nums; border-radius: 0; }
+.pm-slot small { display: block; font-size: 11px; letter-spacing: .08em; font-weight: 400; }
+.pm-slot:hover { background: var(--brand); color: #ffffff; }
+.pm-slot:disabled { border-color: var(--line); color: #a6b6ba; cursor: default; background: var(--tint); text-decoration: line-through; }
+.pm-slots-note { margin-top: 12px; font-size: 13px; color: var(--ink-2); }
+
+/* ── FAQ ── */
+.pm-faq { margin-top: 26px; border-top: 1px solid var(--ink); }
+.pm-faq details { border-bottom: 1px solid var(--line); }
+.pm-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 12px; padding: 18px 0; font-weight: 600; }
+.pm-faq summary::-webkit-details-marker { display: none; }
+.pm-faq summary::after { content: ""; flex: none; width: 10px; height: 10px; margin-top: 7px; border-right: 1.5px solid var(--brand); border-bottom: 1.5px solid var(--brand); transform: rotate(45deg); transition: transform .2s ease; }
+.pm-faq details[open] summary::after { transform: rotate(-135deg); margin-top: 12px; }
+.pm-faq p { padding-bottom: 18px; color: var(--ink-2); font-size: 15px; }
+
+/* ── 문의 ── */
+.pm-end { background: var(--brand-deep); color: #ffffff; }
+.pm-end .pm-h2 { color: #ffffff; }
+.pm-end p.pm-body { margin-top: 14px; color: rgba(255,255,255,.7); }
+.pm-links { margin-top: 32px; border-top: 1px solid rgba(255,255,255,.2); }
+.pm-links a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.2); font-size: 18px; font-weight: 600; }
+.pm-links a small { font-size: 13px; font-weight: 400; color: rgba(255,255,255,.6); }
+.pm-links a::after { content: "→"; color: var(--gold); }
+.pm-foot { margin-top: 30px; font-size: 12px; color: rgba(255,255,255,.5); }
+
+.pm-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--paper); border-top: 1px solid var(--line);
+  padding: 10px max(12px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+.pm-bar-in { max-width: 640px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
+.pm-bar a { display: flex; align-items: center; justify-content: center; height: 52px; font-weight: 600; font-size: 15px; }
+.pm-bar .t { border: 1px solid var(--brand); color: var(--brand); }
+.pm-bar .k { background: var(--brand); color: #ffffff; }
+.pm-toast { position: fixed; left: 50%; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 60; background: var(--ink); color: #fff; font-size: 14px; padding: 12px 18px; max-width: calc(100% - 32px); text-align: center; }
+
+@media (min-width: 900px) {
+  .pm-hero { min-height: 680px; }
+  .pm-hero .pm-wrap, .pm-sec .pm-wrap { max-width: 880px; }
+  .pm-swipe { grid-template-columns: repeat(3, 1fr); }
+  .pm-card { grid-template-columns: 1fr; }
+  .pm-swipe-hint { display: none; }
+  .pm-bar { display: none; }
+  .pm { padding-bottom: 0; }
+}
+</style>
+
+<div class="pm">
+
+  <header class="pm-hero">
+    <div class="pm-photo"></div>
+    <div class="pm-strings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="pm-wrap">
+      <p class="pm-k">PLAY THE BASS · PRIVATE LESSON</p>
+      <h1>일주일에 한 시간,<br><b>베이스 치는 사람</b>이<br>되어 보세요.</h1>
+      <p>취미로 시작하는 성인을 위한 1:1 베이스 레슨. 처음이어도, 악기가 없어도 괜찮아요.</p>
+      <ul class="pm-hero-meta">
+        <li><b>1:1</b>성인 취미</li>
+        <li><b>토요일</b>주 1회 55분</li>
+        <li><b>신림 · 당곡</b>역 도보 5분</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="pm-sec pm-welcome">
+    <div class="pm-wrap">
+      <p class="pm-k">WELCOME</p>
+      <h2 class="pm-h2">잘 치려고 오지 않아도 돼요.<br><b>즐겁게 치려고 오세요.</b></h2>
+      <p class="pm-body">좋아하는 곡의 베이스 라인을 직접 연주해 보는 것. 그 순간을 위해 자세와 기초부터 내 속도에 맞춰 함께 갑니다.</p>
+      <p class="pm-sign">완비베이스랩</p>
+    </div>
+  </section>
+
+  <section class="pm-sec" style="padding-top:0">
+    <div class="pm-wrap">
+      <p class="pm-k">WHY</p>
+      <h2 class="pm-h2">시작이 <b>가벼운</b> 이유</h2>
+      <div class="pm-swipe">
+        <div class="pm-card"><span>01</span><div><h3>왕초보 환영</h3><p>베이스를 한 번도 안 만져 봤어도 자세부터 차근차근 알려 드려요.</p></div></div>
+        <div class="pm-card"><span>02</span><div><h3>몸만 오세요</h3><p>필요한 장비가 모두 준비되어 있어요. 내 악기를 가져와도 좋아요.</p></div></div>
+        <div class="pm-card"><span>03</span><div><h3>자료는 전부 무료</h3><p>직접 만든 악보, 직접 녹음한 예제 연주, MR까지 드려요.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pm-sec pm-curr">
+    <div class="pm-wrap">
+      <p class="pm-k">CURRICULUM</p>
+      <h2 class="pm-h2">배운 걸 바로 <b>음악으로</b></h2>
+      <div class="pm-line">
+        <div><b>83</b><span>핑거 11챕터 · 강</span></div>
+        <div><b>22</b><span>슬랩 5챕터 · 강</span></div>
+        <div><b>105</b><span>총 강의 수</span></div>
+      </div>
+      <p class="pm-body">챕터마다 연습곡 다음 실전곡. 반복 연습 대신 음악과 함께 연주해서 지루하지 않아요. 공연·CCM처럼 목표가 있다면 맞춤 수업도 가능해요.</p>
+      <!-- href 를 수업곡 연주 영상 주소로 바꿔 주세요 -->
+      <a class="pm-watch" href="#" target="_blank" rel="noopener">실제 수업곡 연주 보기<i>PLAY ▶</i></a>
+    </div>
+  </section>
+
+  <section class="pm-sec" id="schedule">
+    <div class="pm-wrap">
+      <p class="pm-k">PRICE &amp; TIME</p>
+      <h2 class="pm-h2">레슨비와 <b>시간</b></h2>
+      <div class="pm-price"><b>180,000원</b><span>4회 · 취미</span></div>
+      <ul class="pm-terms">
+        <li><b>수업</b><span>주 1회 55분, 1:1 오프라인</span></li>
+        <li><b>결제</b><span>현금 · 계좌이체 · 카드 · 간편결제 (현금영수증 가능)</span></li>
+        <li><b>전문·입시</b><span>별도 문의</span></li>
+      </ul>
+      <!-- 마감되면 disabled 를 붙이고 <small>마감</small> 으로 바꿔 주세요 -->
+      <div class="pm-slots-h"><b>토요일 빈 시간</b><span>26.09.02 기준</span></div>
+      <div class="pm-slots">
+        <button class="pm-slot" type="button" disabled>13:00<small>마감</small></button>
+        <button class="pm-slot" type="button" data-time="토요일 14:00">14:00<small>가능</small></button>
+        <button class="pm-slot" type="button" data-time="토요일 15:00">15:00<small>가능</small></button>
+        <button class="pm-slot" type="button" data-time="토요일 16:00">16:00<small>가능</small></button>
+        <button class="pm-slot" type="button" data-time="토요일 17:00">17:00<small>가능</small></button>
+      </div>
+      <p class="pm-slots-note">시간을 누르면 문의 문구가 복사되고 카카오채널이 열려요.</p>
+    </div>
+  </section>
+
+  <section class="pm-sec" style="padding-top:0">
+    <div class="pm-wrap">
+      <p class="pm-k">GOOD TO KNOW</p>
+      <h2 class="pm-h2">미리 <b>알아 두세요</b></h2>
+      <div class="pm-faq">
+        <details><summary>정확한 레슨 장소는요?</summary><p>신림역·당곡역 도보 5분 거리이며, 레슨 확정 후 안내드려요. 홈페이지 하단 주소는 사무실 주소예요.</p></details>
+        <details><summary>주차가 되나요?</summary><p>주택가라 주차가 어려워요. 공영주차장이나 대중교통을 이용해 주세요.</p></details>
+        <details><summary>토요일 말고도 되나요?</summary><p>지금은 토요일만 진행하며, 요일은 점차 늘릴 예정이에요.</p></details>
+        <details><summary>온라인 레슨이나 악기 대여는요?</summary><p>1:1 오프라인 수업만 진행하며, 연습 공간 제공과 악기 대여는 어려워요.</p></details>
+        <details><summary>학생도 되나요?</summary><p>성인 대상 레슨이라 초·중·고 학생은 제외돼요.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="pm-sec pm-end" id="contact">
+    <div class="pm-wrap">
+      <p class="pm-k">CONTACT</p>
+      <h2 class="pm-h2">첫 한 시간,<br><b>편하게 물어보세요.</b></h2>
+      <p class="pm-body">"완전 처음인데 괜찮을까요?" 같은 질문도 환영이에요.</p>
+      <div class="pm-links">
+        <a href="https://pf.kakao.com/_CxckxnT" target="_blank" rel="noopener"><span>카카오채널<br><small>wanbybass</small></span></a>
+        <a href="https://www.instagram.com/wanbybass/" target="_blank" rel="noopener"><span>인스타그램 DM<br><small>@wanbybass</small></span></a>
+        <a href="tel:050219401470"><span>전화<br><small>0502-1940-1470</small></span></a>
+      </div>
+      <p class="pm-foot">WANBY BASS LAB · 완비베이스랩</p>
+    </div>
+  </section>
+
+  <nav class="pm-bar" aria-label="빠른 문의"><div class="pm-bar-in">
+    <a class="t" href="tel:050219401470">전화</a>
+    <a class="k" href="https://pf.kakao.com/_CxckxnT" target="_blank" rel="noopener">카카오로 레슨 문의</a>
+  </div></nav>
+  <div class="pm-toast" id="pmToast" hidden></div>
+</div>
+
+<script>
+(function () {
+  var KAKAO = 'https://pf.kakao.com/_CxckxnT', toast = document.getElementById('pmToast'), t;
+  function show(m) { toast.textContent = m; toast.hidden = false; clearTimeout(t); t = setTimeout(function () { toast.hidden = true; }, 3200); }
+  document.querySelectorAll('.pm-slot[data-time]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = '안녕하세요! ' + b.dataset.time + ' 취미 베이스 레슨 문의드려요.';
+      var ok = function () { show('문의 문구가 복사됐어요. 카카오채널에 붙여넣어 주세요.'); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, function () { show(text); });
+      else show(text);
+      window.open(KAKAO, '_blank', 'noopener');
+    });
+  });
+})();
+</script>

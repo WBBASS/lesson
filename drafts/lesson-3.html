@@ -1,0 +1,274 @@
+<title>Play The Bass 레슨 3안</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+@font-face { font-family: 'Paperlogy'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+.hb, .hb * { font-family: 'Paperlogy', "Apple SD Gothic Neo", "Malgun Gothic", sans-serif !important; }
+
+/* Layout: "주말 취미 포스터" — 틸 전면 히어로에 스티커 배지, 그 아래 둥근 카드 흐름. 커리큘럼은 3단계 한 줄 요약. 모바일 우선. */
+.hb {
+  --brand: #0f4c5c;
+  --brand-deep: #0b3a46;
+  --mint: #e3f1ef;        /* 브랜드 틸을 밝힌 배경 */
+  --sun: #ffd166;         /* 주말 느낌의 따뜻한 포인트 */
+  --sun-soft: #fff4d6;
+  --ink: #0d2329;
+  --ink-2: #4b6168;
+  --line: #d6e3e6;
+  --paper: #ffffff;
+  --kakao: #fee500;
+  color-scheme: light;
+  background: var(--paper); color: var(--ink);
+  font-size: 16px; line-height: 1.7; word-break: keep-all; -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+body { background: #ffffff; }
+.hb *, .hb *::before, .hb *::after { box-sizing: border-box; }
+.hb h1, .hb h2, .hb h3, .hb p, .hb ul, .hb ol { margin: 0; padding: 0; }
+.hb ul, .hb ol { list-style: none; }
+.hb a { color: inherit; text-decoration: none; }
+.hb a:focus-visible, .hb summary:focus-visible, .hb button:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 8px; }
+.hb-wrap { max-width: 600px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.hb-sec { padding-block: 64px; }
+.hb-h2 { font-size: 28px; font-weight: 900; line-height: 1.3; letter-spacing: -.02em; text-wrap: balance; }
+.hb-h2 mark { background: linear-gradient(transparent 58%, var(--sun) 58%); color: inherit; padding: 0 2px; }
+.hb-sub { color: var(--ink-2); margin-top: 10px; }
+
+/* ── 히어로 포스터 ── */
+.hb-hero { background: var(--brand); color: #ffffff; padding-block: 44px 60px; position: relative; overflow: hidden; }
+.hb-hero::after { /* 큰 베이스 줄 4개가 화면을 가로지름 */
+  content: ""; position: absolute; left: -10%; right: -10%; bottom: 36px; height: 70px; transform: rotate(-6deg); pointer-events: none;
+  background:
+    linear-gradient(rgba(255,255,255,.14), rgba(255,255,255,.14)) 0 0 / 100% 1.5px no-repeat,
+    linear-gradient(rgba(255,255,255,.14), rgba(255,255,255,.14)) 0 22px / 100% 2px no-repeat,
+    linear-gradient(rgba(255,255,255,.14), rgba(255,255,255,.14)) 0 44px / 100% 2.5px no-repeat,
+    linear-gradient(rgba(255,255,255,.14), rgba(255,255,255,.14)) 0 66px / 100% 3px no-repeat;
+}
+.hb-hero .hb-wrap { position: relative; z-index: 1; }
+.hb-top { font-size: 13px; font-weight: 600; letter-spacing: .12em; opacity: .75; }
+.hb-hero h1 { font-size: clamp(44px, 13vw, 76px); font-weight: 900; line-height: 1.08; letter-spacing: -.035em; margin-top: 22px; }
+.hb-hero h1 em { font-style: normal; color: var(--sun); }
+.hb-hero p { font-size: 17px; margin-top: 18px; opacity: .9; max-width: 26em; }
+.hb-stickers { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.hb-stickers li { font-size: 15px; font-weight: 800; padding: 10px 16px; border-radius: 999px; background: #ffffff; color: var(--brand); box-shadow: 0 3px 0 var(--brand-deep); }
+.hb-stickers li:nth-child(1) { background: var(--sun); color: var(--ink); transform: rotate(-3deg); }
+.hb-stickers li:nth-child(3) { transform: rotate(2deg); }
+.hb-hero-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; padding: 16px 24px; border-radius: 14px; background: var(--kakao); color: #191600; font-weight: 800; font-size: 16px; }
+
+/* ── 이런 분 환영 ── */
+.hb-who { display: grid; gap: 10px; margin-top: 28px; }
+.hb-who li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; padding: 18px; border-radius: 16px; background: var(--mint); font-size: 16px; font-weight: 600; }
+.hb-who li::before { content: ""; width: 30px; height: 30px; border-radius: 50%; background: var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 16px no-repeat; }
+.hb-note { margin-top: 18px; padding: 16px 18px; border-radius: 14px; background: var(--sun-soft); font-size: 15px; }
+.hb-note b { font-weight: 800; }
+
+/* ── 부담 없는 이유 ── */
+.hb-easy { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+.hb-easy div { padding: 20px 18px; border: 1.5px solid var(--line); border-radius: 16px; }
+.hb-easy b { display: block; font-size: 17px; font-weight: 800; color: var(--brand); }
+.hb-easy span { display: block; font-size: 14px; color: var(--ink-2); margin-top: 6px; line-height: 1.55; }
+
+/* ── 짧은 커리큘럼 ── */
+.hb-steps { display: grid; gap: 0; margin-top: 28px; position: relative; }
+.hb-step { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding-bottom: 22px; position: relative; }
+.hb-step:not(:last-child)::before { content: ""; position: absolute; left: 21px; top: 44px; bottom: 0; width: 2px; background: var(--line); }
+.hb-step i { font-style: normal; width: 44px; height: 44px; border-radius: 50%; background: var(--mint); color: var(--brand); display: grid; place-items: center; font-weight: 900; font-size: 17px; }
+.hb-step h3 { font-size: 18px; font-weight: 800; padding-top: 8px; }
+.hb-step p { font-size: 15px; color: var(--ink-2); }
+.hb-video { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; padding: 18px 20px; border-radius: 16px; background: var(--ink); color: #ffffff; font-weight: 800; }
+.hb-video small { display: block; font-weight: 400; font-size: 13px; opacity: .7; }
+.hb-video span.p { flex: none; width: 44px; height: 44px; border-radius: 50%; background: #ffffff; display: grid; place-items: center; }
+.hb-video span.p::before { content: ""; border-left: 13px solid var(--ink); border-top: 8px solid transparent; border-bottom: 8px solid transparent; margin-left: 4px; }
+
+/* ── 레슨비 + 시간 ── */
+.hb-price { margin-top: 28px; padding: 28px 24px; border-radius: 20px; background: var(--brand); color: #ffffff; }
+.hb-price-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; }
+.hb-price-row span { font-size: 15px; font-weight: 600; padding: 4px 12px; border-radius: 999px; background: var(--sun); color: var(--ink); }
+.hb-price b { display: block; font-size: 44px; font-weight: 900; letter-spacing: -.02em; line-height: 1.1; margin-top: 14px; font-variant-numeric: tabular-nums; }
+.hb-price p { font-size: 15px; opacity: .85; margin-top: 8px; }
+.hb-price small { display: block; font-size: 13px; opacity: .65; margin-top: 16px; }
+.hb-time { margin-top: 14px; padding: 22px 20px; border-radius: 20px; border: 1.5px solid var(--line); }
+.hb-time-top { display: flex; justify-content: space-between; align-items: baseline; }
+.hb-time-top b { font-size: 18px; font-weight: 800; }
+.hb-time-top span { font-size: 12px; color: var(--ink-2); }
+.hb-chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin-top: 14px; }
+.hb-chip { padding: 14px 8px; border-radius: 12px; border: 0; background: var(--mint); color: var(--brand); font-size: 16px; font-weight: 800; text-align: center; cursor: pointer; font-variant-numeric: tabular-nums; }
+.hb-chip small { display: block; font-size: 12px; font-weight: 600; opacity: .8; }
+.hb-chip:hover { background: var(--brand); color: #ffffff; }
+.hb-chip:disabled { background: #f1f3f4; color: #9fb0b4; cursor: default; text-decoration: line-through; }
+.hb-time p { font-size: 13px; color: var(--ink-2); margin-top: 12px; }
+
+/* ── 알아 두세요 ── */
+.hb-faq { margin-top: 24px; }
+.hb-faq details { border-bottom: 1px solid var(--line); }
+.hb-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 12px; padding: 18px 0; font-weight: 600; }
+.hb-faq summary::-webkit-details-marker { display: none; }
+.hb-faq summary::after { content: "+"; font-size: 20px; line-height: 1.2; color: var(--brand); }
+.hb-faq details[open] summary::after { content: "–"; }
+.hb-faq p { padding-bottom: 18px; color: var(--ink-2); font-size: 15px; }
+
+/* ── 마지막 ── */
+.hb-end { background: var(--mint); text-align: center; }
+.hb-end .hb-h2 { font-size: 30px; }
+.hb-contact { display: grid; gap: 10px; margin-top: 26px; text-align: left; }
+.hb-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px; border-radius: 16px; font-weight: 800; font-size: 17px; }
+.hb-cta small { font-size: 13px; font-weight: 400; opacity: .75; }
+.hb-cta--k { background: var(--kakao); color: #191600; }
+.hb-cta--i { background: linear-gradient(120deg, #f58529, #dd2a7b 50%, #8134af); color: #ffffff; }
+.hb-cta--t { background: #ffffff; color: var(--ink); }
+
+.hb-mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--paper); border-top: 1px solid var(--line);
+  padding: 10px max(12px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+.hb-mbar-in { max-width: 600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
+.hb-mbar a { display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 12px; font-weight: 800; }
+.hb-mbar .t { background: var(--mint); color: var(--brand); }
+.hb-mbar .k { background: var(--kakao); color: #191600; }
+.hb-toast { position: fixed; left: 50%; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 60; background: var(--ink); color: #ffffff; font-size: 14px; padding: 12px 18px; border-radius: 12px; max-width: calc(100% - 32px); text-align: center; }
+
+@media (min-width: 900px) {
+  .hb-hero { padding-block: 80px 100px; }
+  .hb-hero .hb-wrap { max-width: 900px; }
+  .hb-mbar { display: none; }
+  .hb { padding-bottom: 0; }
+}
+@media (max-width: 360px) { .hb-easy { grid-template-columns: 1fr; } }
+</style>
+
+<div class="hb">
+
+  <!-- 히어로 -->
+  <header class="hb-hero">
+    <div class="hb-wrap">
+      <p class="hb-top">PLAY THE BASS · 성인 1:1 베이스 레슨</p>
+      <h1>취미로<br>베이스,<br><em>환영해요.</em></h1>
+      <p>잘하려고 오지 않아도 돼요. 좋아하는 곡을 직접 쳐 보는 즐거움, 토요일 한 시간이면 충분해요.</p>
+      <ul class="hb-stickers">
+        <li>취미생 환영</li>
+        <li>왕초보 OK</li>
+        <li>악기 없어도 OK</li>
+      </ul>
+      <a class="hb-hero-cta" href="https://pf.kakao.com/_CxckxnT" target="_blank" rel="noopener">카카오로 편하게 물어보기 →</a>
+    </div>
+  </header>
+
+  <!-- 이런 분 환영 -->
+  <section class="hb-sec">
+    <div class="hb-wrap">
+      <h2 class="hb-h2">이런 분이라면<br><mark>딱 맞아요</mark></h2>
+      <ul class="hb-who">
+        <li>베이스를 한 번도 만져 본 적 없는 분</li>
+        <li>좋아하는 곡을 직접 연주해 보고 싶은 분</li>
+        <li>주말에 나만의 취미를 갖고 싶은 직장인</li>
+        <li>혼자 연습하다 막혀서 제대로 배우고 싶은 분</li>
+      </ul>
+      <p class="hb-note"><b>공연·발표·CCM 준비</b>처럼 목표가 따로 있어도 괜찮아요. 단기 레슨도 가능해요.</p>
+    </div>
+  </section>
+
+  <!-- 부담 없는 이유 -->
+  <section class="hb-sec" style="padding-top:0">
+    <div class="hb-wrap">
+      <h2 class="hb-h2">시작이 <mark>가벼워요</mark></h2>
+      <div class="hb-easy">
+        <div><b>몸만 오세요</b><span>필요한 장비가 다 있어요</span></div>
+        <div><b>자료 무료</b><span>악보 · 예제 연주 · MR 제공</span></div>
+        <div><b>1:1 맞춤</b><span>내 속도에 맞춰 진행해요</span></div>
+        <div><b>주 1회 55분</b><span>4회 단위로 부담 없이</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 짧은 커리큘럼 -->
+  <section class="hb-sec" style="padding-top:0">
+    <div class="hb-wrap">
+      <h2 class="hb-h2">이렇게 배워요</h2>
+      <p class="hb-sub">핑거 83강 + 슬랩 22강, 총 105강. 매 챕터 <b>연습곡 → 실전곡</b>으로 배운 걸 바로 음악으로 연주해요.</p>
+      <ol class="hb-steps">
+        <li class="hb-step"><i>1</i><div><h3>자세와 기본기</h3><p>오른손·왼손 자세부터 차근차근</p></div></li>
+        <li class="hb-step"><i>2</i><div><h3>핑거 11챕터 · 83강</h3><p>해머온, 풀오프, 슬라이드, 고스트노트까지</p></div></li>
+        <li class="hb-step"><i>3</i><div><h3>슬랩 5챕터 · 22강</h3><p>그루브 있는 슬랩 연주로 마무리</p></div></li>
+      </ol>
+      <!-- href 를 수업곡 연주 영상(유튜브) 주소로 바꿔 주세요 -->
+      <a class="hb-video" href="#" target="_blank" rel="noopener">
+        <span>실제 수업곡 연주 보기<small>연습곡 · 실전곡 · 슬랩 미리보기</small></span>
+        <span class="p" aria-hidden="true"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 레슨비 + 시간 -->
+  <section class="hb-sec" style="padding-top:0" id="schedule">
+    <div class="hb-wrap">
+      <h2 class="hb-h2">레슨비와 시간</h2>
+      <div class="hb-price">
+        <div class="hb-price-row"><strong>취미 레슨</strong><span>4회 기준</span></div>
+        <b>180,000원</b>
+        <p>주 1회 55분 · 1:1 · 서울 신림역·당곡역 도보 5분</p>
+        <small>현금 · 계좌이체 · 카드 · 간편결제 / 현금영수증 가능 · 전문·입시는 별도 문의</small>
+      </div>
+      <!-- 마감되면 disabled 를 붙이고 <small>마감</small> 으로 바꿔 주세요 -->
+      <div class="hb-time">
+        <div class="hb-time-top"><b>토요일 빈 시간</b><span>26.09.02 업데이트</span></div>
+        <div class="hb-chips">
+          <button class="hb-chip" type="button" disabled>13:00<small>마감</small></button>
+          <button class="hb-chip" type="button" data-time="토요일 14:00">14:00<small>신청가능</small></button>
+          <button class="hb-chip" type="button" data-time="토요일 15:00">15:00<small>신청가능</small></button>
+          <button class="hb-chip" type="button" data-time="토요일 16:00">16:00<small>신청가능</small></button>
+          <button class="hb-chip" type="button" data-time="토요일 17:00">17:00<small>신청가능</small></button>
+        </div>
+        <p>시간을 누르면 문의 문구가 복사되고 카카오채널이 열려요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 알아 두세요 -->
+  <section class="hb-sec" style="padding-top:0">
+    <div class="hb-wrap">
+      <h2 class="hb-h2">미리 알아 두세요</h2>
+      <div class="hb-faq">
+        <details><summary>정확한 레슨 장소는요?</summary><p>신림역·당곡역 도보 5분 거리이며, 레슨 확정 후 안내드려요. 홈페이지 하단 주소는 사무실 주소예요.</p></details>
+        <details><summary>주차가 되나요?</summary><p>주택가라 주차가 어려워요. 공영주차장이나 대중교통을 이용해 주세요.</p></details>
+        <details><summary>토요일 말고도 되나요?</summary><p>지금은 토요일만 진행하고, 요일은 점차 늘릴 예정이에요.</p></details>
+        <details><summary>온라인 레슨이나 악기 대여는요?</summary><p>1:1 오프라인 수업만 진행하며, 연습 공간 제공과 악기 대여는 어려워요.</p></details>
+        <details><summary>학생도 되나요?</summary><p>성인 대상 레슨이라 초·중·고 학생은 제외돼요.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 -->
+  <section class="hb-sec hb-end" id="contact">
+    <div class="hb-wrap">
+      <h2 class="hb-h2">궁금한 건<br><mark>편하게 물어보세요</mark></h2>
+      <p class="hb-sub">"완전 처음인데 괜찮을까요?" 같은 질문도 좋아요.</p>
+      <div class="hb-contact">
+        <a class="hb-cta hb-cta--k" href="https://pf.kakao.com/_CxckxnT" target="_blank" rel="noopener">카카오채널<small>wanbybass</small></a>
+        <a class="hb-cta hb-cta--i" href="https://www.instagram.com/wanbybass/" target="_blank" rel="noopener">인스타그램 DM<small>@wanbybass</small></a>
+        <a class="hb-cta hb-cta--t" href="tel:050219401470">전화<small>0502-1940-1470</small></a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="hb-mbar" aria-label="빠른 문의"><div class="hb-mbar-in">
+    <a class="t" href="tel:050219401470">전화</a>
+    <a class="k" href="https://pf.kakao.com/_CxckxnT" target="_blank" rel="noopener">카카오로 문의하기</a>
+  </div></nav>
+  <div class="hb-toast" id="hbToast" hidden></div>
+</div>
+
+<script>
+(function () {
+  var KAKAO = 'https://pf.kakao.com/_CxckxnT', toast = document.getElementById('hbToast'), t;
+  function show(m) { toast.textContent = m; toast.hidden = false; clearTimeout(t); t = setTimeout(function () { toast.hidden = true; }, 3200); }
+  document.querySelectorAll('.hb-chip[data-time]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = '안녕하세요! ' + b.dataset.time + ' 취미 베이스 레슨 문의드려요.';
+      var ok = function () { show('문의 문구가 복사됐어요. 카카오채널에 붙여넣어 주세요.'); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, function () { show(text); });
+      else show(text);
+      window.open(KAKAO, '_blank', 'noopener');
+    });
+  });
+})();
+</script>

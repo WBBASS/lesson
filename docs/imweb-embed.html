@@ -1,0 +1,10 @@
+<!-- 아임웹 'HTML 코드' 위젯에 이 내용을 그대로 붙여 넣으세요 -->
+<iframe id="wanby-lesson" src="https://wbbass.github.io/lesson/" title="1:1 베이스 레슨 안내"
+  style="display:block;width:100%;height:4000px;border:0;" loading="lazy"></iframe>
+<script>
+window.addEventListener('message', function (e) {
+  if (e.data && e.data.type === 'wanby-lesson-height') {
+    document.getElementById('wanby-lesson').style.height = e.data.height + 'px';
+  }
+});
+</script>
