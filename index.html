@@ -38,6 +38,7 @@ body { background: #ffffff; }
 .ap-sec { padding-block: 72px; text-align: center; }
 .ap-sec--gray { background: var(--gray); }
 .ap-eyebrow { font-size: 17px; font-weight: 600; color: var(--brand); }
+.ap-eyebrow, .ap-tile .ap-eyebrow { display: inline-block; background: linear-gradient(180deg, var(--brand), #2a8aa0); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .ap-h2 { font-size: clamp(27px, 6.8vw, 42px); font-weight: 700; line-height: 1.12; letter-spacing: -.035em; margin-top: 8px; text-wrap: balance; }
 .ap-lead { font-size: clamp(17px, 4.6vw, 21px); color: var(--ink-2); margin: 16px auto 0; max-width: 30em; line-height: 1.45; }
 .ap-lead b { color: var(--ink); font-weight: 600; }
@@ -46,7 +47,8 @@ body { background: #ffffff; }
 .ap-link::after { content: " ›"; }
 .ap-link:hover { text-decoration: underline; }
 .ap-btn { display: inline-block; padding: 12px 22px; border-radius: 999px; background: var(--brand); color: #fff !important; font-size: 17px; }
-.ap-btn:hover { background: #0b3c49; }
+.ap-btn { background: linear-gradient(180deg, var(--brand), #2a8aa0) !important; }
+.ap-btn:hover { filter: brightness(1.08); }
 
 /* 히어로 */
 .ap-hero { padding-block: 64px 72px; text-align: center; overflow: hidden; }
@@ -79,7 +81,7 @@ body { background: #ffffff; }
 /* 이런 분께 (3안 체크리스트 + 5안 환영 문장) */
 .ap-who { display: grid; gap: 10px; max-width: 560px; margin: 44px auto 0; text-align: left; }
 .ap-who li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: center; padding: 18px 20px; border-radius: 18px; background: var(--gray); font-size: 17px; font-weight: 600; }
-.ap-who li::before { content: ""; width: 28px; height: 28px; border-radius: 50%; background: var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 14px no-repeat; }
+.ap-who li::before { content: ""; width: 28px; height: 28px; border-radius: 50%; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 14px no-repeat, linear-gradient(180deg, var(--brand), #2a8aa0); }
 .ap-note { max-width: 560px; margin: 20px auto 0; font-size: 16px; color: var(--ink-2); }
 /* 105강 비율 막대 (6안) */
 .ap-bar105 { display: grid; grid-template-columns: 83fr 22fr; gap: 4px; height: 52px; max-width: 640px; margin: 36px auto 0; }
@@ -90,7 +92,7 @@ body { background: #ffffff; }
 /* 3가지 장점 */
 .ap-three { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; margin-top: 48px; }
 .ap-three div { display: grid; justify-items: center; gap: 10px; }
-.ap-ic { width: 56px; height: 56px; border-radius: 16px; background: var(--paper); display: grid; place-items: center; }
+.ap-ic { width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(180deg, var(--brand), #2a8aa0); display: grid; place-items: center; }
 .ap-ic svg { width: 30px; height: 30px; }
 .ap-three h3 { font-size: 20px; font-weight: 700; }
 .ap-three p { font-size: 16px; color: var(--ink-2); max-width: 16em; line-height: 1.55; }
@@ -218,7 +220,7 @@ body { background: #ffffff; }
 .pc-meta li i { font-style: normal; color: var(--ink-2); }
 .pc-meta li span { font-weight: 600; }
 .pc-ok { display: flex; align-items: center; gap: 12px; margin-top: 22px; font-size: 15px; font-weight: 600; }
-.pc-ok i { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 14px no-repeat; }
+.pc-ok i { flex: none; width: 28px; height: 28px; border-radius: 50%; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 14px no-repeat, linear-gradient(180deg, var(--brand), #2a8aa0); }
 .pc-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin-top: 22px; }
 .pc-days li { text-align: center; padding: 9px 0; border-radius: 12px; font-size: 15px; font-weight: 700; }
 .pc-days li.off { color: #b9bec1; background: var(--paper); }
@@ -260,19 +262,19 @@ body { background: #ffffff; }
       <p class="ap-lead">준비는 저희가 할게요. <b>즐겁게 칠 마음</b>만 가져오세요.</p>
       <div class="ap-three ap-three--4">
         <div>
-          <span class="ap-ic"><svg viewBox="0 0 30 30" fill="none" stroke="#0f4c5c" stroke-width="2" stroke-linecap="round"><circle cx="15" cy="10" r="4.5"/><path d="M6 26c1-5 4.5-7.5 9-7.5s8 2.5 9 7.5"/></svg></span>
+          <span class="ap-ic"><svg viewBox="0 0 30 30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="15" cy="10" r="4.5"/><path d="M6 26c1-5 4.5-7.5 9-7.5s8 2.5 9 7.5"/></svg></span>
           <h3>왕초보 OK</h3><p>베이스를 처음 잡아도 자세부터 차근차근 1:1로.</p>
         </div>
         <div>
-          <span class="ap-ic"><svg viewBox="0 0 30 30" fill="none" stroke="#0f4c5c" stroke-width="2" stroke-linecap="round"><path d="M19 4l7 7M22.5 7.5L11 19"/><circle cx="8.5" cy="21.5" r="4.5"/></svg></span>
+          <span class="ap-ic"><svg viewBox="0 0 30 30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M19 4l7 7M22.5 7.5L11 19"/><circle cx="8.5" cy="21.5" r="4.5"/></svg></span>
           <h3>악기 없어도 OK</h3><p>필요한 장비가 모두 준비되어 있어요.</p>
         </div>
         <div>
-          <span class="ap-ic"><svg viewBox="0 0 30 30" fill="none" stroke="#0f4c5c" stroke-width="2" stroke-linecap="round"><path d="M11 22V7l13-3v15"/><circle cx="8" cy="22" r="3"/><circle cx="21" cy="19" r="3"/></svg></span>
+          <span class="ap-ic"><svg viewBox="0 0 30 30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M11 22V7l13-3v15"/><circle cx="8" cy="22" r="3"/><circle cx="21" cy="19" r="3"/></svg></span>
           <h3>자료는 무료</h3><p>직접 만든 악보, 예제 연주, MR까지.</p>
         </div>
         <div>
-          <span class="ap-ic"><svg viewBox="0 0 30 30" fill="none" stroke="#0f4c5c" stroke-width="2" stroke-linecap="round"><circle cx="15" cy="15" r="11"/><path d="M15 9v6l4.5 2.5"/></svg></span>
+          <span class="ap-ic"><svg viewBox="0 0 30 30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="15" cy="15" r="11"/><path d="M15 9v6l4.5 2.5"/></svg></span>
           <h3>주 1회 55분</h3><p>4회 단위로 부담 없이.</p>
         </div>
       </div>
